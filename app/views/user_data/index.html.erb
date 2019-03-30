@@ -1,0 +1,18 @@
+<% if current_user %>
+  <div class="page-header"><h1>Upload Photo</h1></div>
+
+<div class="media">
+  <% @photo.each do |photo| %>
+    <div class="media-left">
+      <!-- Renders image -->
+      <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
+    </div>
+  <% end %>
+</div>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or 
+  <%= link_to "Log In", login_path %>
+<% end %>
+<p id=”notice”><%= notice %></p>
+
+

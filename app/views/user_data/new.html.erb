@@ -1,0 +1,5 @@
+
+<%= form_for @user_data, url: user_data_path,:validate => true, :html => { :multipart => true }, :remote => true do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit %>
+<% end %>

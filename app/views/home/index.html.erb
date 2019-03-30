@@ -1,0 +1,21 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log Out", logout_path %>
+  <p><%= @attendance.present %></p>
+  <p><%= @attendance.absent %></p>
+  <form action="/present" method="post">
+  <input type="submit">
+  </form>
+  <form action="/absent" method="post">
+  <input type="submit">
+  </form>
+  <form action="/imagefile" method="post">
+  <input type="submit">
+  </form>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or 
+  <%= link_to "Log In", login_path %>
+<% end %>
+<p id=”notice”><%= notice %></p>
+<h1>Example</h1>
+<p>Lorem ipsum …</p>
